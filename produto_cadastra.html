@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+</head>
+<body>
+    <header class="border-bottom border-primary-subtle bg-body">
+        <!--border bottom cria apenas a linha debaixo da borda-->
+        <div class="container">
+            <div class="row align-items-center py-3 justify-content-between">
+                <!--Uma das colunas fica extremamente a direita e a outra extremamente a esquerda-->
+                <div class="col-4">
+                    <h1 class="fs-4"><a href="index.html" class="text-decoration-none">ERP One</a></h1>
+                    <h2 class="fs-6 lead"> Gerenciamento de Estoque</h2>
+                </div>
+                <div class="col-8">
+                    <nav>
+                        <ul class="nav justify-content-end">
+                        <!--nav deixa os itens de lista alinhados na horizontal-->
+                            <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="produto_lista.html"><i class="bi bi-box-fill"></i> Produtos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="atividade_lista.html"><i class="bi bi-arrow-repeat"></i> Movimentações</a></li>
+                            <li class="nav-item"><a  class="nav-link" href="extrato_lista.html"><i class="bi bi-receipt"></i> Histórico de Transações</a></li>
+                            <!--Classe nav-item depende da classe nav no ul-->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container my-3">
+        <div class="row">
+            <div class="col-12 col-xl-8">
+                <div class="bg-primary-subtle rounded p-2">
+                    <h3 class="fw-bold mb-1">Cadastro de Produtos</h3>
+                    <p class="mt-2 mb-0">Preencha o formulario abaixo para cadastrar produto</p>
+                </div>
+            </div>
+            <div class="my-3 border rounded-3 pt-3 pb-5 ">
+                <div class="border-bottom ps-3 pb-2">
+                    <strong>Dados do produto:</strong>
+                </div>
+                <div class="row">
+                    <div class="col-12 my-3">
+                        <form class="row my-3 m-4">
+                            <div class="col-12 col-md-6 my-2" id="nome">
+                                <label class="mb-1" for=""><strong>Nome:</strong></label>
+                                <input type="text" class="form-control" id="nomeProd">
+                            </div>
+                            <div class="col-12 col-md-6 my-2" id="preco">
+                                <label class="mb-1" for=""><strong>Preco:</strong></label>
+                                <input type="number"min="0" step="0.01" name="precoProd" id="precoProd" class="form-control">
+                            </div>
+                            <div class="col-12 col-md-6 my-2" id="invest">  
+                                <label class="mb-1" for=""><strong>Valor Investido:</strong></label>
+                                <input type="number" min="0" step="0.01" name="investProd" id="investProd" class="form-control">
+                            </div>
+                            <div class="col-12 col-md-6 my-2" id="estoque">
+                                <label class="mb-1" for=""><strong>Estoque:</strong></label>
+                                <input type="number" min="0" step="1" name="estoqProd" id="estoqProd" class="form-control">
+                            </div>
+                            <div class="text-center m-2">
+                                <button class="btn btn-primary btn-lg" type="submit" onclick="verificar()"><i class="bi bi-plus-circle"></i> Cadastrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function verificar(){
+            event.preventDefault() // não deixa o comportamento padrão começar(no caso de formulário recarregar a página)
+            var prod = document.getElementById("nomeProd").value
+            var divProd = document.getElementById("nome")
+            var precoProd = document.getElementById('precoProd').value
+            var divPreco = document.getElementById("preco")
+            var invest = document.getElementById("investProd").value
+            var divInvest = document.getElementById("invest")
+            var estoq = document.getElementById("estoqProd").value
+            var divEstoq = document.getElementById("estoque")
+            var campo = [prod, precoProd, invest, estoq]
+            var div = [divProd, divPreco, divInvest, divEstoq]
+            for(var pos=0; pos<campo.length; pos++){
+                if (campo[pos]==''){
+                    p = document.createElement('p') 
+                    p.textContent = "*Campo obrigatório"
+                    p.style.color = 'red'
+                    div[pos].appendChild(p)
+                }
+            }
+        }
+    </script>
+</body>
+</html>

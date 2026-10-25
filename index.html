@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+</head>
+<body>
+    <header class="border-bottom border-primary-subtle bg-body">
+        <!--border bottom cria apenas a linha debaixo da borda-->
+        <div class="container">
+            <div class="row align-items-center py-3 justify-content-between">
+                <!--Uma das colunas fica extremamente a direita e a outra extremamente a esquerda-->
+                <div class="col-4">
+                    <h1 class="fs-4"><a href="index.html" class="text-decoration-none">ERP One</a></h1>
+                    <h2 class="fs-6 lead"> Gerenciamento de Estoque</h2>
+                </div>
+                <div class="col-8">
+                    <nav>
+                        <ul class="nav justify-content-end">
+                        <!--nav deixa os itens de lista alinhados na horizontal-->
+                            <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="produto_lista.html"><i class="bi bi-box-fill"></i> Produtos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="atividade_lista.html"><i class="bi bi-arrow-repeat"></i> Movimentações</a></li>
+                            <li class="nav-item"><a  class="nav-link" href="extrato_lista.html"><i class="bi bi-receipt"></i> Histórico de Transações</a></li>
+                            <!--Classe nav-item depende da classe nav no ul-->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container my-5">
+        <section class="text-center mb-4 border rounded-3 p-4 border-primary-subtle"> <!--border-primary é azul forte, -subtle é mais fraco-->
+            <!--Apenas border cria uma borda inteira(caixa)--> <!--Rounded deixa a borda arredondada-->
+            <h3><i class="bi bi-journal-check fs-4"></i> Resumos</h1>
+            <div class="row"> <!-- row é a mesma coisa de display: flex e podese usar colunas-->
+                <div class="col-6">
+                    <h4><span class="badge text-bg-primary">0</span></h4>
+                    <p>Produtos Cadastrados</p>
+                </div>
+                <div class="col-6">
+                    <h4><span class="badge text-bg-primary">0</span></h4>
+                    Fornecedores
+                </div>
+                <div class="col-6">
+                    <h4><span class="badge text-bg-primary">0</span></h4>
+                    Estoque Baixo
+                </div>
+                <div class="col-6">
+                    <h4><span class="badge text-bg-primary">0</span></h4>
+                    Usuários ativos
+                </div>
+            </div>
+        </section>
+        <section class="text-center mb-4 border rounded-3 text-center p-4 border-primary-subtle">
+            <!--Apenas usar uma div.row quando for usar col, e só usar col quando for necessário uma organização-->
+                <h3><i class="bi bi-file-earmark-text fs-4"></i> Relatórios</h3>
+                <a class="btn btn-lg btn-outline-primary m-1" href="relatorio_produto.html"><i class="bi bi-box-fill"></i> Produtos</a>
+                <a class="btn btn-lg btn-outline-primary m-1" href="relatorio_atividade.html"><i class="bi bi-arrow-repeat"></i> Movimentações</a>
+                <a class="btn btn-lg btn-outline-primary m-1" href="relatorio_extrato.html"><i class="bi bi-receipt"></i> Extrato da Conta</a>
+                <a class="btn btn-lg btn-outline-primary m-1" href="relatorio_estoque.html"><i class="bi bi-clipboard-data"></i> Estoque</a>
+            </div>
+        </section>
+    </main>
+    <footer class="">
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
