@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,10 +34,6 @@
     </header>
     <main class="container my-3">
         <div class="row">
-            <!--Justify-content e align-items só atua no layout dos filhos diretos
-            já o text-align atua nos seus decendentes também-->
-            <!--Justify content/align-itens como vou distribuir meus filhos?-->
-            <!--text-align como o conteúdo de texto dentro de mim deve ser alinhado?-->
             <div class="col-12 col-xl-8">
                 <div class="bg-primary-subtle rounded p-2">
                     <h3 class="fw-bold mb-1">Gerar relatório de extrato</h3>
@@ -46,47 +42,40 @@
             </div>
         </div>
         <section class="text-center mb-4 border rounded-3 p-4 border-primary-subtle my-4">
-            <div class="row">
-                <div class="col-12 my-2">
-                    <form class="row  my-3">
-                        <!--Row está sendo usado aqui porque dentro deste formukário estamos usando col- -->
-                        <!--como justify-content e align-item só dao seus atributos a filhos diretos, row também
-                        por isso precisamos usar row aqui mesmo tendo usado na div "avo"-->
-                        <div class="col-12 col-md-2 mb-2">
-                            <label for=""><strong>Tipo:</strong></label>
-                            <select id="select" class="form-control">
-                                <option value=""></option>
-                                <option value="ENTRADA" id="SAÍDA">Entrada</option>
-                                <option value="Saída" id="Saída">Saída</option>
-                            </select>
-                            <!--Form control já deixa o input com 100% de largura e estilisado-->
-                        </div>
-                        <div class="col-12 col-md-2 mb-2">
-                            <label for=""><strong>Quem realizou:</strong></label>
-                            <input type="text" name="nomeProd" id="nomeProd" class="form-control">
-                        </div>
-                        <div class="col-12 col-md-2 mb-2">
-                            <label for=""><strong>Valor mín:</strong></label>
-                            <input type="number" min="0" step="0.01" name="valorMin" id="valorMin" class="form-control">
-                        </div>
-                        <div class="col-12 col-md-2 mb-2">
-                            <label for=""><strong>Valor máx:</strong></label>
-                            <input type="number" min="0" step="0.01" name="valorMax" id="valorMax" class="form-control">
-                        </div>
-                        <div class="col-12 col-md-2 mb-2">
-                            <label for=""><strong>Realizada de:</strong></label>
-                            <input type="date" name="dataInicial" id="dataInicial" class="form-control">
-                        </div>
-                        <div class="col-12 col-md-2 mb-2">
-                            <label for=""><strong>Até:</strong></label>
-                            <input type="date" name="dataUltima" id="dataUltima" class="form-control">
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-primary m-3" type="submit"><i class="bi bi-download"></i> Baixar Relatório</button>
-                        </div>
-                    </form>
+            <form class="row  my-3">
+                <div class="col-12 col-md-2 mb-2">
+                    <label for=""><strong>Tipo:</strong></label>
+                    <select id="select" class="form-control">
+                        <option value=""></option>
+                        <option value="ENTRADA" id="SAÍDA">Entrada</option>
+                        <option value="Saída" id="Saída">Saída</option>
+                    </select>
+                    <!--Form control já deixa o input com 100% de largura e estilisado-->
                 </div>
-            </div>
+                <div class="col-12 col-md-2 mb-2">
+                    <label for=""><strong>Quem realizou:</strong></label>
+                    <input type="text" name="nomeProd" id="nomeProd" class="form-control">
+                </div>
+                <div class="col-12 col-md-2 mb-2">
+                    <label for=""><strong>Valor mín:</strong></label>
+                    <input type="number" min="0" step="0.01" name="valorMin" id="valorMin" class="form-control">
+                </div>
+                <div class="col-12 col-md-2 mb-2">
+                    <label for=""><strong>Valor máx:</strong></label>
+                    <input type="number" min="0" step="0.01" name="valorMax" id="valorMax" class="form-control">
+                </div>
+                <div class="col-12 col-md-2 mb-2">
+                    <label for=""><strong>Realizada de:</strong></label>
+                    <input type="date" name="dataInicial" id="dataInicial" class="form-control">
+                </div>
+                <div class="col-12 col-md-2 mb-2">
+                    <label for=""><strong>Até:</strong></label>
+                    <input type="date" name="dataUltima" id="dataUltima" class="form-control">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary m-3" type="submit"><i class="bi bi-download"></i> Baixar Relatório</button>
+                </div>
+            </form>
         </section>
     </main>
 </body>

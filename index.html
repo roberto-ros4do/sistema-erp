@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +9,43 @@
 </head>
 <body>
     <header class="border-bottom border-primary-subtle bg-body">
-        <!--border bottom cria apenas a linha debaixo da borda-->
+        <!--Border-Bottom cria uma linha na borda inferior do header-->
+        <!--Bg-Body aplica a cor de fundo padrão do tema.-->
         <div class="container">
+        <!--Container centraliza o conteúdo e limita a largura(por isso sem ele o ERPone fica colado no canto)-->
             <div class="row align-items-center py-3 justify-content-between">
-                <!--Uma das colunas fica extremamente a direita e a outra extremamente a esquerda-->
+                <!--
+                Row cria um contêiner Flexbox (display: flex),
+                organizando seus filhos horizontalmente por padrão.
+                As classes col-4 e col-8 definem a largura das colunas
+                com base no sistema de 12 colunas do Bootstrap.
+                -->
+                <!--
+                    .row {
+                        display: flex;
+                        flex-wrap: wrap; //permite que os elementos filhos quebrem a linha quando necessário
+                    }
+                -->
+                <!--OBS: align items e justify content apenas controlam o alinhamento dos elementos filhos(que estão dentro do container flexbox)
+                (sem controlar o alinhamento dos elementos que ficam dentro dos elementos filhos)-->
+                <!--OBS quando declaramos display:flex em um elemento ele se torna um container flexbox
+                e os elementos filhos desse container são os itens flexiveis, são estes que justify-content e align-items controlam-->
                 <div class="col-4">
                     <h1 class="fs-4"><a href="index.html" class="text-decoration-none">ERP One</a></h1>
                     <h2 class="fs-6 lead"> Gerenciamento de Estoque</h2>
+                    <!--fs-* define o tamanho da fonte, quanto maior o número menor a fonte-->
                 </div>
                 <div class="col-8">
                     <nav>
                         <ul class="nav justify-content-end">
-                        <!--nav deixa os itens de lista alinhados na horizontal-->
+                        <!--nav deixa os itens de lista alinhados na horizontal automaticamente-->
                             <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="produto_lista.html"><i class="bi bi-box-fill"></i> Produtos</a></li>
                             <li class="nav-item"><a class="nav-link" href="atividade_lista.html"><i class="bi bi-arrow-repeat"></i> Movimentações</a></li>
                             <li class="nav-item"><a  class="nav-link" href="extrato_lista.html"><i class="bi bi-receipt"></i> Histórico de Transações</a></li>
                             <!--Classe nav-item depende da classe nav no ul-->
+                            <!--Nav-item serve para organizar os itens da navegação-->
+                            <!--Nav-link é pra deixar o link bonitinho-->
                         </ul>
                     </nav>
                 </div>
@@ -34,11 +54,25 @@
     </header>
     <main class="container my-5">
         <section class="text-center mb-4 border rounded-3 p-4 border-primary-subtle"> <!--border-primary é azul forte, -subtle é mais fraco-->
-            <!--Apenas border cria uma borda inteira(caixa)--> <!--Rounded deixa a borda arredondada-->
-            <h3><i class="bi bi-journal-check fs-4"></i> Resumos</h1>
-            <div class="row"> <!-- row é a mesma coisa de display: flex e podese usar colunas-->
+           <!--Border cria uma borda inteira(caixa) nas bordas do do elemento(nesse caso da section)-->
+           <!--Rounded deixa a borda arredondada-->
+           <!--Text Center centraliza o texto que está dentro de TODA a section, incluindo o texto dentro
+           das divs filhas, ao contrário de align-items e justify-content que apenas alinha elementos dos elementos/divs filhas-->
+           <!--Difereça importante:
+           Text-center e text-align:
+           -Alinha TODO o conteúdo textual de dentro de um elemento, inclusive os que estão dentro dos 
+           elementos filhos
+           
+           Justify-content e Align-items:
+           -Controlam o posicionamento dos elementos felxíveis filhos de um container flexbox, mas 
+           não afetam o alinhamento do conteúdo textual ou elementos dentro desses elementos filhos.
+           
+           --->
+            <h3><i class="bi bi-journal-check fs-4"></i> Resumos</h3>
+            <div class="row"> 
                 <div class="col-6">
                     <h4><span class="badge text-bg-primary">0</span></h4>
+                    <!--Bage cria um retângulo com fundo colorido e bordas arredondadas-->
                     <p>Produtos Cadastrados</p>
                 </div>
                 <div class="col-6">
@@ -53,16 +87,18 @@
                     <h4><span class="badge text-bg-primary">0</span></h4>
                     Usuários ativos
                 </div>
+                <!--Nessa configuração, como as duas primeiras divs são .col-6 elas vão ocupar toda a linha(as duas juntas somam 12)
+                então as próximas vão quebrar a linha por conta do flex-wrap-->
             </div>
         </section>
         <section class="text-center mb-4 border rounded-3 text-center p-4 border-primary-subtle">
-            <!--Apenas usar uma div.row quando for usar col, e só usar col quando for necessário uma organização-->
                 <h3><i class="bi bi-file-earmark-text fs-4"></i> Relatórios</h3>
                 <a class="btn btn-lg btn-outline-primary m-1" href="relatorio_produto.html"><i class="bi bi-box-fill"></i> Produtos</a>
                 <a class="btn btn-lg btn-outline-primary m-1" href="relatorio_atividade.html"><i class="bi bi-arrow-repeat"></i> Movimentações</a>
                 <a class="btn btn-lg btn-outline-primary m-1" href="relatorio_extrato.html"><i class="bi bi-receipt"></i> Extrato da Conta</a>
                 <a class="btn btn-lg btn-outline-primary m-1" href="relatorio_estoque.html"><i class="bi bi-clipboard-data"></i> Estoque</a>
-            </div>
+                <!--Btn cria um botão-->
+                <!--Btn-lgdefine que o tamanho do botão será grande-->
         </section>
     </main>
     <footer class="">
